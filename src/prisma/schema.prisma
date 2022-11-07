@@ -28,7 +28,9 @@ model Restaurant {
 model Review {
   id           String      @id() @default(cuid())
   content      String
+  author       String   @default("anonymous")
   images       String?
+  time         DateTime   @default(now())
   Restaurant   Restaurant? @relation(fields: [restaurantId], references: [id])
   restaurantId String
 }

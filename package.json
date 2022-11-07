@@ -3,14 +3,13 @@
 		"@prisma/client": "^4.5.0",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
-		"http-error": "^0.0.6",
 		"http-errors": "^2.0.0",
 		"ts-node": "^10.9.1"
 	},
 	"scripts": {
 		"dev": "nodemon ./src/main.ts",
 		"build": "npm install && npm tsc",
-		"start": "npm install && npm tsc && node ./dist/main.js"
+		"start": "node ./dist/main.js"
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.14",
@@ -22,5 +21,5 @@
 	},
 	"prisma": {
 		"schema": "./src/prisma/schema.prisma"
-	  }
+	}
 }
