@@ -34,12 +34,11 @@ const app = (0, express_1.default)();
 const router = express_1.default.Router();
 const PORT = process.env.PORT || 3000;
 console.log(PORT);
-// // router.get('/restaurants', protectedRoute, getAllRestaurants)
 router.get("/", (req, res, next) => {
     res.send("hello");
 });
 router.use((req, res, next) => {
-    next(new http_errors_1.default.NotFound());
+    next(new http_errors_1.default.NotImplemented());
 });
 const errorHandler = (err, req, res, next) => {
     res.status(err.status || 500);
@@ -47,6 +46,8 @@ const errorHandler = (err, req, res, next) => {
         status: err.status || 500,
         message: err.message
     });
+    return;
 };
-app.use(errorHandler, router);
+router.use(errorHandler);
+app.use(router);
 const server = app.listen(PORT, () => console.log("Server is running on port " + PORT));
