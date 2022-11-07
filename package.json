@@ -10,7 +10,7 @@
 	"scripts": {
 		"dev": "nodemon ./src/main.ts",
 		"build": "npm install && npm tsc",
-		"start": "node ./dist/main.js"
+		"start": "npm install && npm tsc && node ./dist/main.js"
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.14",
