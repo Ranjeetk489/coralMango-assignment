@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"dev": "nodemon ./src/main.ts",
-		"build": "npm install && tsc",
+		"build": "npm install && npm tsc",
 		"start": "node ./dist/main.js"
 	},
 	"devDependencies": {
