@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id       String @id @default(cuid())
+  email String @unique
+  password String
+  // can be modiefied to query selected restaurants based on credentials
+  // Restaurant String[]
+}
+
+model Restaurant {
+  id      String   @id() @default(cuid())
+  name    String
+  address Address?
+  review  Review[]
+}
+
+model Review {
+  id           String      @id() @default(cuid())
+  content      String
+  images       String?
+  Restaurant   Restaurant? @relation(fields: [restaurantId], references: [id])
+  restaurantId String
+}
+
+model Address {
+  id           String     @id() @default(cuid())
+  shop_no      String?
+  street_no    String?
+  city         String
+  state        String
+  pincode      String
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  restaurantId String     @unique
+}
