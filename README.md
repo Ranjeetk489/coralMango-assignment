@@ -12,7 +12,7 @@ This api is live at https://coralrestaurant.onrender.com
 | GET | /reviews/:id  | Fetches all review details for a restaurant id based on id passed as query params  |
 | POST | /edit_review | Makes an update operation on db by taking the "reviewId" and "content" to be updated in body of request |
 | POST | /post_review | Makes an create operation on db by adding a review with params like "restaurantId", "content" in request body |
-| POST | /login | Makes an post request to authenticate user by checking against the data present in db expects params "email" and "params" |
+| POST | /login | Makes an post request to authenticate user by checking against the data present in db expects params "email" and "password" |
 
 
 To test login api use - ranjeet123@gmail.com and ranjeet123 
