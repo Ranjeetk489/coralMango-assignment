@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"dev": "nodemon ./src/main.ts",
-		"build": "npm install && npm tsc",
+		"build": "tsc --build",
 		"start": "node ./dist/main.js"
 	},
 	"devDependencies": {
